@@ -29,17 +29,24 @@ public class LoginController {
         stage.setScene(new Scene(root));
     }
 
-    public void login_button_onclick() {
-        String username = String.valueOf(login_username);
-        String password = String.valueOf(login_password);
+    public void login_button_onclick() throws IOException {
+        String username = String.valueOf(login_username.getCharacters());
+        String password = String.valueOf(login_password.getCharacters());
         login_error_message.setVisible(username.isBlank() || password.isBlank());
+        //This is just a test
+        if (username.equalsIgnoreCase("admin") && password.equalsIgnoreCase("admin")){
+            Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("../../resources/views/home.fxml")));
+            Stage stage = (Stage) login_button.getScene().getWindow();
+            stage.setScene(new Scene(root));
+            stage.setTitle("Church Management System - Home");
+        }
     }
 
     public String get_login_username() {
-        return String.valueOf(login_username);
+        return String.valueOf(login_username.getCharacters());
     }
 
     public String get_login_password(){
-        return String.valueOf(login_password);
+        return String.valueOf(login_password.getCharacters());
     }
 }
