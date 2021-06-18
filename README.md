@@ -1,2 +1,2 @@
 # ChurchManagementSoftware
-A desktop application for managing church services and transactions.
+A desktop apps for managing church services and transactions.
