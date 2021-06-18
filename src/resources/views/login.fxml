@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1200.0" spacing="40.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="apps.controllers.LoginController">
+<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1200.0" spacing="40.0" style="-fx-background-color: #5c5c5c;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="apps.controllers.LoginController">
    <padding>
       <Insets top="50.0" />
    </padding>
@@ -27,10 +27,10 @@
    <ImageView fitHeight="228.0" fitWidth="239.0" pickOnBounds="true" preserveRatio="true">
       <Image url="@../images/profile_icon.png" />
    </ImageView>
-   <TextField fx:id="login_username" focusTraversable="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="350.0" promptText="Username" style="-fx-background-color: white; -fx-background-radius: 7px;" />
-   <PasswordField fx:id="login_password" focusTraversable="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="350.0" promptText="Password" style="-fx-background-color: white; -fx-background-radius: 7px;" />
+   <TextField fx:id="login_username" focusTraversable="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="350.0" promptText="Username" style="-fx-background-radius: 7px;" />
+   <PasswordField fx:id="login_password" focusTraversable="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="350.0" promptText="Password" style="-fx-background-radius: 7px;" />
    <HBox alignment="CENTER" prefHeight="36.0" prefWidth="1200.0" spacing="90.0">
-      <Hyperlink fx:id="change_password_link" focusTraversable="false" onMouseClicked="#change_password_link_onclick" prefHeight="24.0" prefWidth="172.0" text="Change Password">
+      <Hyperlink fx:id="change_password_link" focusTraversable="false" onMouseClicked="#change_password_link_onclick" prefHeight="24.0" prefWidth="172.0" text="Change Password" textFill="#61abff">
          <font>
             <Font name="Cantarell Bold" size="16.0" />
          </font>
