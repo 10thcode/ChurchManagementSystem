@@ -27,6 +27,7 @@ public class LoginController {
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("../../resources/views/change_password.fxml")));
         Stage stage = (Stage) change_password_link.getScene().getWindow();
         stage.setScene(new Scene(root));
+        stage.setTitle("Church Management - Change Password");
     }
 
     public void login_button_onclick() throws IOException {

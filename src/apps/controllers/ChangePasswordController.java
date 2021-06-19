@@ -18,6 +18,6 @@ public class ChangePasswordController {
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("../../resources/views/login.fxml")));
         Stage stage = (Stage) cancel_button.getScene().getWindow();
         stage.setScene(new Scene(root));
-        stage.setTitle("Church Management System - Change Password");
+        stage.setTitle("Church Management System - Login");
     }
 }
