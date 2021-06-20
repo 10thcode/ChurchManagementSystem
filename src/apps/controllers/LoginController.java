@@ -43,11 +43,7 @@ public class LoginController {
         }
     }
 
-    public String get_login_username() {
-        return String.valueOf(login_username.getCharacters());
-    }
-
-    public String get_login_password(){
-        return String.valueOf(login_password.getCharacters());
-    }
+//    public String get_login_username() {return String.valueOf(login_username.getCharacters());}
+//
+//    public String get_login_password(){return String.valueOf(login_password.getCharacters());}
 }

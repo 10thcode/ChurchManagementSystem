@@ -3,8 +3,15 @@ package apps.controllers;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.ListView;
 import javafx.scene.image.ImageView;
+import javafx.stage.Stage;
+
+import java.io.IOException;
+import java.util.Objects;
 
 public class HomeController {
     ObservableList<String> membership_list_elements = FXCollections.observableArrayList("Attendance",
@@ -34,7 +41,12 @@ public class HomeController {
     }
 
     @FXML
-    private void membership_tab_onclick() {
+    private void membership_tab_onclick() throws IOException {
+        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("../../resources/views/membership_form.fxml")));
+        Stage stage = new Stage();
+        stage.setScene(new Scene(root));
+        stage.setTitle("Church Management - Membership Form");
+        stage.show();
     }
 
     @FXML
