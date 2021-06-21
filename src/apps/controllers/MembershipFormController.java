@@ -76,7 +76,7 @@ public class MembershipFormController {
         setChildrenNum(null);
         setOccupation(null);
         setResidence(null);
-        setPassportImage("resources/images/default_passport_icon.png"); //To be modified.
+        setPassportImage("resources/images/default_passport_icon.png");
         setOccupation(null);
         setResidence(null);
         setHometown(null);

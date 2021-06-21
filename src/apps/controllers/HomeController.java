@@ -8,6 +8,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.ListView;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -80,5 +81,16 @@ public class HomeController {
 
     @FXML
     private void welfare_tab_onclick() {
+    }
+
+    public void membership_list_onselect() throws IOException {
+        Object selected = membership_dropdown_list.getSelectionModel().getSelectedItems().toString();
+        if (selected.equals("[Membership Register]")) {
+            Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("../../resources/views/membership_register.fxml")));
+            Stage stage = new Stage();
+            stage.setScene(new Scene(root));
+            stage.setTitle("Church Management - Membership Register");
+            stage.show();
+        }
     }
 }
