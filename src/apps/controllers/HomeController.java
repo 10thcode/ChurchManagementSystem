@@ -8,7 +8,6 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.ListView;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -84,13 +83,24 @@ public class HomeController {
     }
 
     public void membership_list_onselect() throws IOException {
-        Object selected = membership_dropdown_list.getSelectionModel().getSelectedItems().toString();
-        if (selected.equals("[Membership Register]")) {
-            Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("../../resources/views/membership_register.fxml")));
-            Stage stage = new Stage();
-            stage.setScene(new Scene(root));
-            stage.setTitle("Church Management - Membership Register");
-            stage.show();
+        String selected = membership_dropdown_list.getSelectionModel().getSelectedItems().toString();
+        Parent root;
+        Stage stage = new Stage();
+        switch (selected) {
+            case "[Membership Register]":
+                root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("../../resources/views/membership_register.fxml")));
+                stage.setTitle("Church Management - Membership Register");
+                stage.setScene(new Scene(root));
+                stage.show();
+                break;
+            case "[Attendance]":
+                root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("../../resources/views/attendance_form.fxml")));
+                stage.setTitle("Church Management - Attendance Form");
+                stage.setScene(new Scene(root));
+                stage.show();
+                break;
+            default:
+                //Do nothing;
         }
     }
 }
