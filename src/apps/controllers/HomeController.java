@@ -57,7 +57,12 @@ public class HomeController {
     }
 
     @FXML
-    private void tithe_tab_onclick() {
+    private void tithe_tab_onclick() throws IOException {
+        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("../../resources/views/tithe_form.fxml")));
+        Stage stage = new Stage();
+        stage.setScene(new Scene(root));
+        stage.setTitle("Church Management - Tithe Form");
+        stage.show();
     }
 
     @FXML
