@@ -11,8 +11,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
-<VBox fx:controller="apps.controllers.AttendanceFormController" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="800.0" style="-fx-background-color: #B6BCA0;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="800.0" style="-fx-background-color: #B6BCA0;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="apps.controllers.AttendanceFormController">
    <children>
       <HBox alignment="CENTER" maxWidth="-Infinity" prefHeight="698.0" prefWidth="800.0" spacing="30.0" style="-fx-background-color: e0e6c3; -fx-background-radius: 10; -fx-border-color: black; -fx-border-radius: 10; -fx-border-width: 2;" VBox.vgrow="NEVER">
          <children>
@@ -47,7 +46,7 @@
             </VBox>
             <VBox alignment="CENTER_LEFT" prefHeight="700.0" prefWidth="389.0" spacing="50.0">
                <children>
-                  <ChoiceBox minHeight="30.0" prefHeight="30.0" prefWidth="411.0" />
+                  <ChoiceBox fx:id="service_choicebox" minHeight="30.0" prefHeight="30.0" prefWidth="411.0" />
                   <TextField minHeight="30.0">
                      <font>
                         <Font size="16.0" />

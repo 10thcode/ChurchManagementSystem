@@ -1,0 +1,17 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="ChurchManagementSystem:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/ChurchManagementSystem_jar</output-path>
+    <root id="archive" name="ChurchManagementSystem.jar">
+      <element id="module-output" name="ChurchManagementSystem" />
+      <element id="extracted-dir" path="$PATH_TO_JFX$/src.zip" path-in-jar="/" />
+      <element id="extracted-dir" path="$PATH_TO_JFX$/javafx-swt.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PATH_TO_JFX$/javafx.web.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PATH_TO_JFX$/javafx.base.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PATH_TO_JFX$/javafx.fxml.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PATH_TO_JFX$/javafx.media.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PATH_TO_JFX$/javafx.swing.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PATH_TO_JFX$/javafx.controls.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PATH_TO_JFX$/javafx.graphics.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>

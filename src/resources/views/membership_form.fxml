@@ -199,7 +199,7 @@
                         </graphic>
                      </Button>
                      </HBox>
-                     <ChoiceBox fx:id="occupation_choicebox" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="30.0" prefWidth="406.0" style="-fx-background-color: white;" />
+                     <ChoiceBox fx:id="occupation_choicebox" maxHeight="-Infinity" minHeight="-Infinity" nodeOrientation="LEFT_TO_RIGHT" prefHeight="30.0" prefWidth="406.0" style="-fx-background-color: white;" />
                      <TextArea fx:id="residence_field" layoutX="10.0" layoutY="255.0" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="30.0" VBox.vgrow="ALWAYS">
                         <font>
                            <Font size="16.0" />

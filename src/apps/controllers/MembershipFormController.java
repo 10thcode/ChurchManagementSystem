@@ -1,5 +1,7 @@
 package apps.controllers;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextArea;
@@ -10,40 +12,61 @@ import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
 import java.io.File;
-import java.nio.file.Path;
 
 public class MembershipFormController {
+    ObservableList<String> gender_dropdown_elements = FXCollections.observableArrayList("Male", "Female");
+    ObservableList<String> marital_status_dropdown_elements = FXCollections.observableArrayList("Single",
+            "Married", "Divorced");
+    ObservableList<String> children_number_dropdown_elements = FXCollections.observableArrayList("1", "2",
+            "3", "4", "5", "6", "7", "8", "9", "10");
+    ObservableList<String> occupation_dropdown_elements = FXCollections.observableArrayList("Teacher",
+            "Trader", "Lawyer", "Accountant", "Mechanic");
+    ObservableList<String> region_dropdown_elements = FXCollections.observableArrayList("Volta", "Eastern",
+            "Central", "Ashanti", "Northern", "Greater Accra", "Western", "Upper West", "Upper East", "Brong Ahafo",
+            "Ahafo", "North East", "Oti", "Western North", "Bono", "Cape Coast", "Savannah");
+    ObservableList<String> nationality_dropdown_elements = FXCollections.observableArrayList("Ghanian", "Nigerian",
+            "Togolese");
+    ObservableList<String> education_level_dropdown_elements = FXCollections.observableArrayList("Primary",
+            "Junior High", "Senior High", "Polytechnic", "University");
+    ObservableList<String> relationship_dropdown_elements = FXCollections.observableArrayList("Father", "Mohter",
+            "Uncle", "Aunt", "Son", "Daughter");
     @FXML private TextArea membership_id_field;
     @FXML private TextArea first_name_field;
     @FXML private TextArea last_name_field;
     @FXML private TextArea other_names_field;
-    @FXML private ChoiceBox gender_choicebox;
+    @FXML private ChoiceBox<String> gender_choicebox;
     @FXML private TextArea dob_field;
     @FXML private TextArea contact1_field;
     @FXML private TextArea contact2_field;
     @FXML private TextArea email;
     @FXML private TextArea address_field;
-    @FXML private ChoiceBox marital_status_choicebox;
-    @FXML private ChoiceBox children_num_choicebox;
+    @FXML private ChoiceBox<String> marital_status_choicebox;
+    @FXML private ChoiceBox<String> children_num_choicebox;
     @FXML private ImageView passport_imageview;
-    @FXML private ChoiceBox occupation_choicebox;
+    @FXML private ChoiceBox<String> occupation_choicebox;
     @FXML private TextArea residence_field;
     @FXML private TextArea hometown_field;
-    @FXML private ChoiceBox region_choicebox;
-    @FXML private ChoiceBox nationality_choicebox;
-    @FXML private ChoiceBox education_level_choicebox;
+    @FXML private ChoiceBox<String> region_choicebox;
+    @FXML private ChoiceBox<String> nationality_choicebox;
+    @FXML private ChoiceBox<String> education_level_choicebox;
     @FXML private TextArea cr_name_field;
     @FXML private TextArea cr_contact_field;
     @FXML private TextArea cr_address_field;
-    @FXML private ChoiceBox cr_relationship_choicebox;
-    @FXML private ChoiceBox cr_occupation_choicebox;
-
-    public String getSearch() {
-        return search_field.getText();
-    }
-
+    @FXML private ChoiceBox<String> cr_relationship_choicebox;
+    @FXML private ChoiceBox<String> cr_occupation_choicebox;
     @FXML private TextField search_field;
 
+    public  void  initialize(){
+        marital_status_choicebox.getItems().addAll(marital_status_dropdown_elements);
+        children_num_choicebox.getItems().addAll(children_number_dropdown_elements);
+        cr_occupation_choicebox.getItems().addAll(occupation_dropdown_elements);
+        occupation_choicebox.getItems().addAll(occupation_dropdown_elements);
+        cr_relationship_choicebox.getItems().addAll(relationship_dropdown_elements);
+        education_level_choicebox.getItems().addAll(education_level_dropdown_elements);
+        nationality_choicebox.getItems().addAll(nationality_dropdown_elements);
+        region_choicebox.getItems().addAll(region_dropdown_elements);
+        gender_choicebox.getItems().addAll(gender_dropdown_elements);
+    }
     @FXML private void capture_button_onclick() {
     }
 
@@ -54,8 +77,13 @@ public class MembershipFormController {
         fileChooser.getExtensionFilters().addAll(
                 new FileChooser.ExtensionFilter("Image Files", "*.png", "*.jpg"));
         File selectedFile = fileChooser.showOpenDialog(stage);
-        String url = selectedFile.getPath();
-        setPassportImage("file:" + url);
+        try {
+            String url = selectedFile.getPath();
+            setPassportImage("file:" + url);
+        }catch (NullPointerException e) {
+            System.out.println("No Image Selected");
+        }
+
     }
 
     @FXML private void search_button_onclick() {
@@ -96,6 +124,10 @@ public class MembershipFormController {
         //closing window after details have successfully been saved in the database.
         Stage stage = (Stage) membership_id_field.getScene().getWindow();
         stage.close();
+    }
+
+    public String getSearch() {
+        return search_field.getText();
     }
 
     public String getMembershipId() {
