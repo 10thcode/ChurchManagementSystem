@@ -42,7 +42,8 @@ public class HomeController {
 
     @FXML
     private void membership_tab_onclick() throws IOException {
-        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("../../resources/views/membership_form.fxml")));
+        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().
+                getResource("../../resources/views/membership_form.fxml")));
         Stage stage = new Stage();
         stage.setScene(new Scene(root));
         stage.setTitle("Church Management - Membership Form");
@@ -58,7 +59,8 @@ public class HomeController {
 
     @FXML
     private void tithe_tab_onclick() throws IOException {
-        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("../../resources/views/tithe_form.fxml")));
+        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass()
+                .getResource("../../resources/views/tithe_form.fxml")));
         Stage stage = new Stage();
         stage.setScene(new Scene(root));
         stage.setTitle("Church Management - Tithe Form");
@@ -93,19 +95,22 @@ public class HomeController {
         Stage stage = new Stage();
         switch (selected) {
             case "[Membership Register]":
-                root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("../../resources/views/membership_register.fxml")));
+                root = FXMLLoader.load(Objects.requireNonNull(getClass().
+                        getResource("../../resources/views/membership_register.fxml")));
                 stage.setTitle("Church Management - Membership Record");
                 stage.setScene(new Scene(root));
                 stage.show();
                 break;
             case "[Attendance]":
-                root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("../../resources/views/attendance_form.fxml")));
+                root = FXMLLoader.load(Objects.requireNonNull(getClass().
+                        getResource("../../resources/views/attendance_form.fxml")));
                 stage.setTitle("Church Management - Attendance Form");
                 stage.setScene(new Scene(root));
                 stage.show();
                 break;
             case "[Attendance Register]":
-                root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("../../resources/views/attendance_register.fxml")));
+                root = FXMLLoader.load(Objects.requireNonNull(getClass().
+                        getResource("../../resources/views/attendance_register.fxml")));
                 stage.setTitle("Church Management - Attendance Record");
                 stage.setScene(new Scene(root));
                 stage.show();

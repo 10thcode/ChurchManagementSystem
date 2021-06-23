@@ -151,7 +151,7 @@
             </AnchorPane>
             <HBox alignment="BOTTOM_RIGHT" spacing="450.0">
                <children>
-                  <Button mnemonicParsing="false" text="Receive Cash">
+                  <Button mnemonicParsing="false" onMouseClicked="#receive_cash_onclick" text="Receive Cash">
                      <font>
                         <Font name="System Bold" size="13.0" />
                      </font>

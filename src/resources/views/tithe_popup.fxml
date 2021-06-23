@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="442.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="apps.controllers.TithePopupController">
+   <children>
+      <HBox alignment="CENTER" spacing="20.0" VBox.vgrow="ALWAYS">
+         <children>
+            <VBox alignment="CENTER_RIGHT" spacing="30.0">
+               <children>
+                  <Label prefHeight="50.0" text="AMOUNT:">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="10.0" layoutY="10.0" prefHeight="50.0" text="AMOUNT TENDERED:">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="10.0" layoutY="26.0" prefHeight="50.0" text="CHANGE DUE:">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+            <VBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="10.0" spacing="30.0">
+               <children>
+                  <TextField editable="false" prefHeight="50.0" prefWidth="409.0" style="-fx-background-color: lightgrey;" />
+                  <TextField prefHeight="50.0" style="-fx-background-color: lightgrey;" />
+                  <TextField editable="false" prefHeight="50.0" style="-fx-background-color: lightgrey;" />
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER">
+         <children>
+            <Button fx:id="cancel_button" mnemonicParsing="false" onMouseClicked="#cancel_button_onclick" prefHeight="70.0" prefWidth="450.0" style="-fx-background-color: #c91e71;" text="Cancel" textFill="WHITE" HBox.hgrow="ALWAYS">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Button>
+            <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="70.0" prefWidth="450.0" style="-fx-background-color: #1ec99c;" text="Accept" HBox.hgrow="NEVER">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Button>
+         </children>
+      </HBox>
+   </children>
+</VBox>
