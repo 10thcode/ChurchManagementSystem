@@ -62,7 +62,7 @@
                         <Font size="16.0" />
                      </font>
                   </TextField>
-                  <TextField fx:id="txtTotal" minHeight="30.0">
+                  <TextField fx:id="txtTotal" editable="false" minHeight="30.0">
                      <font>
                         <Font size="16.0" />
                      </font>
