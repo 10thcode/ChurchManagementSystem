@@ -1,7 +1,7 @@
 package apps.controllers;
 
-//import animatefx.animation.FadeIn;
-//import apps.DbManuplation.DbManipulate;
+import animatefx.animation.FadeIn;
+import apps.DbManuplation.DbManipulate;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -26,9 +26,9 @@ public class LoginController {
     @FXML
     private PasswordField login_password;
 
-//    private DbManipulate dbManipulate;
-//
-//    private ResultSet resultSet;
+    private DbManipulate dbManipulate;
+
+    private ResultSet resultSet;
 
     @FXML
     public void change_password_link_onclick() throws IOException {
