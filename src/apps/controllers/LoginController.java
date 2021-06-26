@@ -1,7 +1,7 @@
 package apps.controllers;
 
-import animatefx.animation.FadeIn;
-import apps.DbManuplation.DbManipulate;
+//import animatefx.animation.FadeIn;
+//import apps.DbManuplation.DbManipulate;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -26,13 +26,14 @@ public class LoginController {
     @FXML
     private PasswordField login_password;
 
-    private DbManipulate dbManipulate;
-
-    private ResultSet resultSet;
+//    private DbManipulate dbManipulate;
+//
+//    private ResultSet resultSet;
 
     @FXML
     public void change_password_link_onclick() throws IOException {
-        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("../../resources/views/change_password.fxml")));
+        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass()
+                .getResource("../../resources/views/change_password.fxml")));
         Stage stage = (Stage) change_password_link.getScene().getWindow();
         stage.setScene(new Scene(root));
         stage.setTitle("Church Management - Change Password");
@@ -42,7 +43,6 @@ public class LoginController {
         String username = login_username.getText();
         String password = login_password.getText();
         login_error_message.setVisible(username.isBlank() || password.isBlank());
-        //This is just a test
 
         // create instance of DbManipulate
         dbManipulate = new DbManipulate();
@@ -53,29 +53,19 @@ public class LoginController {
         resultSet = dbManipulate.retrieveData(query);
 
         if (resultSet != null){
-
-
-                        if (resultSet.next()) {
-
-                            Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("../../resources/views/home.fxml")));
-                            Stage stage = (Stage) login_button.getScene().getWindow();
-                            stage.setScene(new Scene(root));
-                            stage.setTitle("Church Management System - Home");
-
-                        }
-                        else {
-                            FadeIn fadeIn = new FadeIn();
-                            fadeIn.setNode(login_error_message);
-                            fadeIn.play();
-                        }
-
-
-
+            if (resultSet.next()) {
+                Parent root = FXMLLoader.load(Objects.requireNonNull(getClass()
+                        .getResource("../../resources/views/home.fxml")));
+                Stage stage = (Stage) login_button.getScene().getWindow();
+                stage.setScene(new Scene(root));
+                stage.setTitle("Church Management System - Home");
+            }
+            else {
+                FadeIn fadeIn = new FadeIn();
+                login_error_message.setText("Incorrect username or password.");
+                fadeIn.setNode(login_error_message);
+                fadeIn.play();
+            }
         }
-
     }
-
-//    public String get_login_username() {return String.valueOf(login_username.getCharacters());}
-//
-//    public String get_login_password(){return String.valueOf(login_password.getCharacters());}
 }
