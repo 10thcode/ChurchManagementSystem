@@ -2,6 +2,7 @@ package apps.DbManuplation;
 
 import apps.DbConnection.DbConnection;
 
+import javax.management.Query;
 import java.sql.*;
 
 public class DbManipulate {
@@ -12,17 +13,19 @@ public class DbManipulate {
     private ResultSet resultSet;
 
 
-//    public  int InsertIntoDb(String query){
-//       //
-//       con = DbConnection.getConnection();
-//        try {
-//            statement = con.prepareStatement(query);
-//
-//        } catch (SQLException throwables) {
-//            throwables.printStackTrace();
-//        }
-//
-//    }
+    public  Boolean InsertIntoDb(String query){
+       //
+       con = DbConnection.getConnection();
+        try {
+            statement = con.createStatement();
+            statement.execute(query);
+
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        return true;
+
+    }
 
 
 
