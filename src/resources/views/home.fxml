@@ -95,7 +95,7 @@
                      <Insets bottom="10.0" right="60.0" />
                   </StackPane.margin>
                </Label>
-               <ListView fx:id="tithe_dropdown_list" fixedCellSize="50.0" focusTraversable="false" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="261.0" prefWidth="372.0" visible="false" StackPane.alignment="CENTER_LEFT" />
+               <ListView fx:id="tithe_dropdown_list" fixedCellSize="50.0" focusTraversable="false" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#tithe_list_onselect" prefHeight="261.0" prefWidth="372.0" visible="false" StackPane.alignment="CENTER_LEFT" />
             </StackPane>
          </HBox>
          <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="100.0">

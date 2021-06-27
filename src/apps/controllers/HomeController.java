@@ -8,6 +8,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.ListView;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -112,6 +113,37 @@ public class HomeController {
                 root = FXMLLoader.load(Objects.requireNonNull(getClass().
                         getResource("../../resources/views/attendance_register.fxml")));
                 stage.setTitle("Church Management - Attendance Record");
+                stage.setScene(new Scene(root));
+                stage.show();
+                break;
+            default:
+                //Do nothing;
+        }
+    }
+
+    public void tithe_list_onselect() throws IOException {
+        String selected = tithe_dropdown_list.getSelectionModel().getSelectedItems().toString();
+        Parent root;
+        Stage stage = new Stage();
+        switch (selected) {
+            case "[Offering]":
+                root = FXMLLoader.load(Objects.requireNonNull(getClass().
+                        getResource("../../resources/views/offering_form.fxml")));
+                stage.setTitle("Church Management - Offering Form");
+                stage.setScene(new Scene(root));
+                stage.show();
+                break;
+//            case "[Offering Register]":
+//                root = FXMLLoader.load(Objects.requireNonNull(getClass().
+//                        getResource("../../resources/views/offering_register.fxml")));
+//                stage.setTitle("Church Management - Attendance Form");
+//                stage.setScene(new Scene(root));
+//                stage.show();
+//                break;
+            case "[Tithe Register]":
+                root = FXMLLoader.load(Objects.requireNonNull(getClass().
+                        getResource("../../resources/views/tithe_register.fxml")));
+                stage.setTitle("Church Management - Tithe Record");
                 stage.setScene(new Scene(root));
                 stage.show();
                 break;

@@ -16,7 +16,7 @@
 <?import apps.controllers.TitledBorder?>
 
 <VBox alignment="TOP_CENTER" spacing="20.0" style="-fx-background-color: #7fc1c7;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="apps.controllers.MembershipRegisterController">
-    <AnchorPane prefHeight="571.0" prefWidth="1200.0" VBox.vgrow="ALWAYS">
+    <AnchorPane VBox.vgrow="ALWAYS">
         <children>
             <TableView fixedCellSize="8.0" focusTraversable="false" layoutX="195.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                 <columns>
@@ -36,9 +36,9 @@
         </children>
     </AnchorPane>
     <TitledBorder title="Search By" stylesheets="@../styles/membership_register.css">
-    <HBox alignment="CENTER" prefHeight="102.0" prefWidth="1200.0" VBox.vgrow="NEVER">
+    <HBox alignment="CENTER" spacing="10.0" VBox.vgrow="NEVER">
         <children>
-            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0" HBox.hgrow="ALWAYS">
+            <HBox alignment="CENTER" spacing="10.0" HBox.hgrow="ALWAYS">
                 <children>
                     <Label text="Options:" />
                     <ChoiceBox prefHeight="24.0" prefWidth="216.0" />
@@ -54,7 +54,7 @@
                     </Button>
                 </children>
             </HBox>
-            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="50.0" spacing="10.0" HBox.hgrow="ALWAYS">
+            <HBox alignment="CENTER" spacing="10.0" HBox.hgrow="ALWAYS">
                 <children>
                     <Label text="Total:" />
                     <TextField editable="false" />
