@@ -4,6 +4,8 @@
       <root url="jar://$PROJECT_DIR$/../Downloads/sqljdbc_9.2/enu/mssql-jdbc-9.2.1.jre11.jar!/" />
     </CLASSES>
     <JAVADOC />
-    <SOURCES />
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/../.ideaLibSources/mssql-jdbc-9.2.1.jre11-sources.jar!/" />
+    </SOURCES>
   </library>
 </component>
