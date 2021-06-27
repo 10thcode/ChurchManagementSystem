@@ -164,13 +164,13 @@ public class HomeController {
 //                stage.setScene(new Scene(root));
 //                stage.show();
 //                break;
-//            case "[Pledge Register]":
-//                root = FXMLLoader.load(Objects.requireNonNull(getClass().
-//                        getResource("../../resources/views/offering_register.fxml")));
-//                stage.setTitle("Church Management - Attendance Form");
-//                stage.setScene(new Scene(root));
-//                stage.show();
-//                break;
+            case "[Pledge Register]":
+                root = FXMLLoader.load(Objects.requireNonNull(getClass().
+                        getResource("../../resources/views/pledge_register.fxml")));
+                stage.setTitle("Church Management - Pledge Records");
+                stage.setScene(new Scene(root));
+                stage.show();
+                break;
             case "[Fund-raising Register]":
                 root = FXMLLoader.load(Objects.requireNonNull(getClass().
                         getResource("../../resources/views/fundraising_register.fxml")));
