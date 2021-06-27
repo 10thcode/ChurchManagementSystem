@@ -120,7 +120,7 @@
                      <Insets bottom="40.0" right="60.0" />
                   </StackPane.margin>
                </Label>
-               <ListView fx:id="fundraising_dropdown_list" fixedCellSize="50.0" focusTraversable="false" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="261.0" prefWidth="372.0" visible="false" StackPane.alignment="CENTER_LEFT" />
+               <ListView fx:id="fundraising_dropdown_list" fixedCellSize="50.0" focusTraversable="false" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#fundraising_list_onclick" prefHeight="261.0" prefWidth="372.0" visible="false" StackPane.alignment="CENTER_LEFT" />
             </StackPane>
             <StackPane prefHeight="197.0" prefWidth="273.0">
                <ImageView fitHeight="261.0" fitWidth="457.0" onMouseClicked="#welfare_tab_onclick" pickOnBounds="true" preserveRatio="true">

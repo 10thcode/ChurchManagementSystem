@@ -136,7 +136,7 @@ public class HomeController {
             case "[Offering Register]":
                 root = FXMLLoader.load(Objects.requireNonNull(getClass().
                         getResource("../../resources/views/offering_register.fxml")));
-                stage.setTitle("Church Management - Attendance Form");
+                stage.setTitle("Church Management - Offing Records");
                 stage.setScene(new Scene(root));
                 stage.show();
                 break;
@@ -144,6 +144,37 @@ public class HomeController {
                 root = FXMLLoader.load(Objects.requireNonNull(getClass().
                         getResource("../../resources/views/tithe_register.fxml")));
                 stage.setTitle("Church Management - Tithe Record");
+                stage.setScene(new Scene(root));
+                stage.show();
+                break;
+            default:
+                //Do nothing;
+        }
+    }
+
+    public void fundraising_list_onclick() throws IOException {
+        String selected = fundraising_dropdown_list.getSelectionModel().getSelectedItems().toString();
+        Parent root;
+        Stage stage = new Stage();
+        switch (selected) {
+//            case "[Pledge]":
+//                root = FXMLLoader.load(Objects.requireNonNull(getClass().
+//                        getResource("../../resources/views/offering_form.fxml")));
+//                stage.setTitle("Church Management - Offering Form");
+//                stage.setScene(new Scene(root));
+//                stage.show();
+//                break;
+//            case "[Pledge Register]":
+//                root = FXMLLoader.load(Objects.requireNonNull(getClass().
+//                        getResource("../../resources/views/offering_register.fxml")));
+//                stage.setTitle("Church Management - Attendance Form");
+//                stage.setScene(new Scene(root));
+//                stage.show();
+//                break;
+            case "[Fund-raising Register]":
+                root = FXMLLoader.load(Objects.requireNonNull(getClass().
+                        getResource("../../resources/views/fundraising_register.fxml")));
+                stage.setTitle("Church Management - Fund-raising Record");
                 stage.setScene(new Scene(root));
                 stage.show();
                 break;
