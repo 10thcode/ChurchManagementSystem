@@ -20,7 +20,7 @@
             <HBox alignment="CENTER" spacing="10.0" HBox.hgrow="ALWAYS">
                <children>
                   <Label text="Service:" />
-                  <ChoiceBox prefWidth="150.0" />
+                  <ChoiceBox prefWidth="150.0" fx:id="choiceBox" />
                </children>
             </HBox>
             <HBox alignment="CENTER" layoutX="10.0" layoutY="10.0" spacing="10.0" HBox.hgrow="ALWAYS">
