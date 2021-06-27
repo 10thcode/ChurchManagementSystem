@@ -157,13 +157,13 @@ public class HomeController {
         Parent root;
         Stage stage = new Stage();
         switch (selected) {
-//            case "[Pledge]":
-//                root = FXMLLoader.load(Objects.requireNonNull(getClass().
-//                        getResource("../../resources/views/offering_form.fxml")));
-//                stage.setTitle("Church Management - Offering Form");
-//                stage.setScene(new Scene(root));
-//                stage.show();
-//                break;
+            case "[Special Project Register]":
+                root = FXMLLoader.load(Objects.requireNonNull(getClass().
+                        getResource("../../resources/views/special_project_register.fxml")));
+                stage.setTitle("Church Management - Special Project Records");
+                stage.setScene(new Scene(root));
+                stage.show();
+                break;
             case "[Pledge Register]":
                 root = FXMLLoader.load(Objects.requireNonNull(getClass().
                         getResource("../../resources/views/pledge_register.fxml")));
