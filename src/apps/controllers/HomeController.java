@@ -76,7 +76,13 @@ public class HomeController {
     }
 
     @FXML
-    private void fundraising_tab_onclick() {
+    private void fundraising_tab_onclick() throws IOException {
+        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass()
+                .getResource("../../resources/views/fundraising_form.fxml")));
+        Stage stage = new Stage();
+        stage.setScene(new Scene(root));
+        stage.setTitle("Church Management - Fundraising Form");
+        stage.show();
     }
 
     @FXML
@@ -157,6 +163,20 @@ public class HomeController {
         Parent root;
         Stage stage = new Stage();
         switch (selected) {
+            case "[Special Project]":
+                root = FXMLLoader.load(Objects.requireNonNull(getClass().
+                        getResource("../../resources/views/special_project_form.fxml")));
+                stage.setTitle("Church Management - Special Project Form");
+                stage.setScene(new Scene(root));
+                stage.show();
+                break;
+            case "[Pledge]":
+                root = FXMLLoader.load(Objects.requireNonNull(getClass().
+                        getResource("../../resources/views/pledge_form.fxml")));
+                stage.setTitle("Church Management - Pledge Form");
+                stage.setScene(new Scene(root));
+                stage.show();
+                break;
             case "[Special Project Register]":
                 root = FXMLLoader.load(Objects.requireNonNull(getClass().
                         getResource("../../resources/views/special_project_register.fxml")));
