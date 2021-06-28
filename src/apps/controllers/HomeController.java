@@ -163,6 +163,20 @@ public class HomeController {
         Parent root;
         Stage stage = new Stage();
         switch (selected) {
+            case "[Special Project Pledge]":
+                root = FXMLLoader.load(Objects.requireNonNull(getClass().
+                        getResource("../../resources/views/special_project_pledge_form.fxml")));
+                stage.setTitle("Church Management - Special Project Pledge Form");
+                stage.setScene(new Scene(root));
+                stage.show();
+                break;
+            case "[Special Project Pledge Register]":
+                root = FXMLLoader.load(Objects.requireNonNull(getClass().
+                        getResource("../../resources/views/special_project_pledge_register.fxml")));
+                stage.setTitle("Church Management - Special Project Pledge Records");
+                stage.setScene(new Scene(root));
+                stage.show();
+                break;
             case "[Special Project]":
                 root = FXMLLoader.load(Objects.requireNonNull(getClass().
                         getResource("../../resources/views/special_project_form.fxml")));
@@ -194,7 +208,7 @@ public class HomeController {
             case "[Fund-raising Register]":
                 root = FXMLLoader.load(Objects.requireNonNull(getClass().
                         getResource("../../resources/views/fundraising_register.fxml")));
-                stage.setTitle("Church Management - Fund-raising Record");
+                stage.setTitle("Church Management - Fund-raising Records");
                 stage.setScene(new Scene(root));
                 stage.show();
                 break;

@@ -11,8 +11,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
-<VBox fx:controller="apps.controllers.PledgeForm" alignment="TOP_CENTER" spacing="20.0" style="-fx-background-color: d1d9a7;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+<VBox alignment="TOP_CENTER" spacing="20.0" style="-fx-background-color: #d1d9a7;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="apps.controllers.PledgeForm">
    <children>
       <HBox alignment="TOP_RIGHT" spacing="20.0">
          <children>
