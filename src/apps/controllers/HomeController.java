@@ -8,7 +8,6 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.ListView;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -93,7 +92,13 @@ public class HomeController {
     }
 
     @FXML
-    private void welfare_tab_onclick() {
+    private void welfare_tab_onclick() throws IOException {
+        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass()
+                .getResource("../../resources/views/welfare_form.fxml")));
+        Stage stage = new Stage();
+        stage.setScene(new Scene(root));
+        stage.setTitle("Church Management - Welfare Form");
+        stage.show();
     }
 
     public void membership_list_onselect() throws IOException {
@@ -214,6 +219,19 @@ public class HomeController {
                 break;
             default:
                 //Do nothing;
+        }
+    }
+
+    public void welfare_list_onselect() throws IOException {
+        String selected = tithe_dropdown_list.getSelectionModel().getSelectedItems().toString();
+        Parent root;
+        Stage stage = new Stage();
+        if(selected.equals("[Welfare Register]")) {
+            root = FXMLLoader.load(Objects.requireNonNull(getClass().
+                    getResource("../../resources/views/welfare_register.fxml")));
+            stage.setTitle("Church Management - Welfare Records");
+            stage.setScene(new Scene(root));
+            stage.show();
         }
     }
 }
