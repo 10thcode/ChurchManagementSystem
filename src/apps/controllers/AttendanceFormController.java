@@ -13,6 +13,7 @@ import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
 import javafx.stage.Window;
 import java.sql.*;
 
@@ -104,6 +105,8 @@ public class AttendanceFormController {
 
 
 
+        Stage stage = (Stage) txtNumber_of_children.getScene().getWindow();
+        stage.close();
 
 
     }
@@ -118,6 +121,7 @@ public class AttendanceFormController {
         txtNumber_of_children.clear();
         number_of_female.clear();
         txtTotal.clear();
+        service_choicebox.setValue(null);
 
     }
 }

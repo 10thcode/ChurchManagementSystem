@@ -39,6 +39,9 @@ public class MembershipFormController {
     public TextField search_field;
     public TextField cr_name_field;
 
+
+
+
     ObservableList<String> gender_dropdown_elements = FXCollections.observableArrayList("Male", "Female");
     ObservableList<String> marital_status_dropdown_elements = FXCollections.observableArrayList("Single",
             "Married", "Divorced");
@@ -55,6 +58,9 @@ public class MembershipFormController {
             "Junior High", "Senior High", "Polytechnic", "University");
     ObservableList<String> relationship_dropdown_elements = FXCollections.observableArrayList("Father", "Mother",
             "Uncle", "Aunt", "Son", "Daughter");
+
+
+
 
 
     public  void  initialize(){
@@ -88,6 +94,7 @@ public class MembershipFormController {
     }
 
     @FXML private void search_button_onclick() {
+        String search = search_field.getText();
     }
 
     @FXML private void clear_button_onclick() {
@@ -119,8 +126,44 @@ public class MembershipFormController {
         setCrAddress(null);
     }
 
+
+
+
+
     @FXML private void save_button_onclick() {
-        // TODO: 6/21/21 Get field values and store in database.
+        // TODO: xx/xx/21 Get field values and store in database.
+
+        String Membership_id = membership_id_field.getText();
+        String firstName = first_name_field.getText();
+        String lastName= last_name_field.getText();
+        String otherNames = other_names_field.getText();
+        String genderChoiceValue = gender_choicebox.getValue();
+        String DateOfBirth = dob_field.getText();
+        String contactField1 = contact1_field.getText();
+        String contactField2 = contact2_field.getText();
+        String emailValue = email.getText();
+        String addressField = address_field.getText();
+        String maritalStatusChoiceValue= marital_status_choicebox.getValue();
+        String numberOfChildren = children_num_choicebox.getValue();
+
+        //Will come back to the image later
+
+        String occupation = occupation_choicebox.getValue();
+        String residence = residence_field.getText();
+        String hometown = hometown_field.getText();
+        String region = region_choicebox.getValue();
+        String nationality = nationality_choicebox.getValue();
+        String educationLevel = education_level_choicebox.getValue();
+        String closestRelationName = cr_name_field.getText();
+        String closestRelationContact = cr_contact_field.getText();
+        String closestRelationAddress = cr_address_field.getText();
+        String closestRelationRelationship = cr_relationship_choicebox.getValue();
+        String closestRelationOccupation = cr_occupation_choicebox.getValue();
+
+
+
+
+
 
         //closing window after details have successfully been saved in the database.
         Stage stage = (Stage) membership_id_field.getScene().getWindow();

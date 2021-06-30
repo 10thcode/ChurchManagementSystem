@@ -7,14 +7,14 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" prefWidth="800.0" style="-fx-background-color: #7fc1c7;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="apps.controllers.AttendanceRegisterController">
    <children>
-      <TableView AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <TableView AnchorPane.bottomAnchor="0.0" fx:id="Table" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <columns>
-          <TableColumn editable="false" text="DATE" />
-          <TableColumn editable="false" text="SERVICE" />
-            <TableColumn editable="false" text="NO OF MALE" />
-            <TableColumn editable="false" text="NO OF FEMALE" />
-            <TableColumn editable="false" text="NO OF CHILDREN" />
-            <TableColumn editable="false" text="TOTAL" />
+          <TableColumn editable="false" fx:id="date" text="DATE" />
+          <TableColumn editable="false" fx:id="service" text="SERVICE" />
+            <TableColumn editable="false" fx:id="no_of_male" text="NO OF MALE" />
+            <TableColumn editable="false" fx:id="no_of_female" text="NO OF FEMALE" />
+            <TableColumn editable="false" fx:id="no_of_children" text="NO OF CHILDREN" />
+            <TableColumn editable="false" fx:id="total" text="TOTAL" />
         </columns>
          <columnResizePolicy>
             <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
