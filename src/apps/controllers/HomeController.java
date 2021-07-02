@@ -223,7 +223,7 @@ public class HomeController {
     }
 
     public void welfare_list_onselect() throws IOException {
-        String selected = tithe_dropdown_list.getSelectionModel().getSelectedItems().toString();
+        String selected = welfare_dropdown_list.getSelectionModel().getSelectedItems().toString();
         Parent root;
         Stage stage = new Stage();
         if(selected.equals("[Welfare Register]")) {
