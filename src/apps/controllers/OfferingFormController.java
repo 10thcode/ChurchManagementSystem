@@ -18,7 +18,7 @@ public class OfferingFormController {
 
     @FXML private ChoiceBox<String> choiceBox;
 
-    public ObservableList<AttendanceRegisterController.TableModel> data = FXCollections.observableArrayList();
+   // public ObservableList<AttendanceRegisterController.TableModel> data = FXCollections.observableArrayList();
 
     public void initialize(){
         choiceBox.getItems().addAll(service_dropdown_elements);
