@@ -1,5 +1,6 @@
 package apps.controllers;
 
+import apps.DbManuplation.DbManipulate;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -7,6 +8,7 @@ import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyEvent;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
@@ -40,6 +42,7 @@ public class MembershipFormController {
     public TextField cr_name_field;
 
 
+    DbManipulate dbManipulate = new DbManipulate();
 
 
     ObservableList<String> gender_dropdown_elements = FXCollections.observableArrayList("Male", "Female");
@@ -144,7 +147,7 @@ public class MembershipFormController {
         String emailValue = email.getText();
         String addressField = address_field.getText();
         String maritalStatusChoiceValue= marital_status_choicebox.getValue();
-        String numberOfChildren = children_num_choicebox.getValue();
+        int numberOfChildren = Integer.parseInt(children_num_choicebox.getValue());
 
         //Will come back to the image later
 
@@ -160,8 +163,13 @@ public class MembershipFormController {
         String closestRelationRelationship = cr_relationship_choicebox.getValue();
         String closestRelationOccupation = cr_occupation_choicebox.getValue();
 
+        try {
+            String Query = "INSERT INTO MEMBERSHIP_RECORDS_TABLE VALUES(" + "'" + Membership_id + "'" + ", " + "'" + firstName + "'" + ", " + "'" + lastName + "'" + ", " + "'" + otherNames + "'" + ", " + "'" + genderChoiceValue + "'" + ", " + "'" + DateOfBirth + "'" + ", " + "'" + contactField1 + "'" + ", " + "'" + contactField2 + "'" + ", " + "'" + emailValue + "'" + ", " + "'" + addressField + "'" + ", " + "'" + maritalStatusChoiceValue + "'" + ", "  + numberOfChildren + ", " + "'" + occupation + "'" + ", " + "'" + residence + "'" + ", " + "'" + hometown + "'" + ", " + "'" + region + "'" + ", " + "'" + nationality + "'" + ", " + "'" + educationLevel + "'" + ", " + "'" + closestRelationName + "'" + ", " + "'" + closestRelationContact + "'" + ", " + "'" + closestRelationAddress + "'" + ", " + "'" + closestRelationRelationship + "'" + ", " + "'" + closestRelationOccupation + "'" + ");";
 
+            dbManipulate.InsertIntoDb(Query);
+        }catch (Exception exception){
 
+        }
 
 
 
@@ -364,5 +372,34 @@ public class MembershipFormController {
 
     public void setCrOccupation(String cr_occupation) {
         this.cr_occupation_choicebox.setValue(cr_occupation);
+    }
+
+    public void contact_field1_onclick(KeyEvent keyEvent) {
+        String text = contact1_field.getText().toLowerCase();
+        char c = text.charAt(text.length()-1);
+        if (c == 'a' || c == 'b' || c == 'c' || c == 'd' || c == 'e' || c == 'f'|| c == 'g' || c == 'h' || c == 'i' || c == 'j' || c == 'k' || c == 'l' || c == 'm' || c == 'n' || c == 'o' || c == 'p' || c == 'q' || c == 'r' || c == 's' || c == 't' || c == 'u' || c == 'v' || c == 'w' || c == 'x' || c == 'y' || c == 'z'){
+            setContact1(null);
+        }
+
+    }
+
+    public void contact_field2_onclick(KeyEvent keyEvent) {
+        String text = contact2_field.getText().toLowerCase();
+        char c = text.charAt(text.length()-1);
+        if (c == 'a' || c == 'b' || c == 'c' || c == 'd' || c == 'e' || c == 'f'|| c == 'g' || c == 'h' || c == 'i' || c == 'j' || c == 'k' || c == 'l' || c == 'm' || c == 'n' || c == 'o' || c == 'p' || c == 'q' || c == 'r' || c == 's' || c == 't' || c == 'u' || c == 'v' || c == 'w' || c == 'x' || c == 'y' || c == 'z'){
+            setContact2(null);
+        }
+
+
+    }
+
+    public void cr_contact_on_Key_released(KeyEvent keyEvent) {
+
+        String text = cr_contact_field.getText().toLowerCase();
+        char c = text.charAt(text.length()-1);
+        if (c == 'a' || c == 'b' || c == 'c' || c == 'd' || c == 'e' || c == 'f'|| c == 'g' || c == 'h' || c == 'i' || c == 'j' || c == 'k' || c == 'l' || c == 'm' || c == 'n' || c == 'o' || c == 'p' || c == 'q' || c == 'r' || c == 's' || c == 't' || c == 'u' || c == 'v' || c == 'w' || c == 'x' || c == 'y' || c == 'z'){
+            setCrContact(null);
+        }
+
     }
 }

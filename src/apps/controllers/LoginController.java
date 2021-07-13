@@ -50,21 +50,22 @@ public class LoginController {
         String query = String.format("Select Username , Password from USER_TABLE\n" +
                 "  where Username = '%s' and Password = '%s'",username , password);
 
-//        resultSet = dbManipulate.retrieveData(query);
-        if (/*resultSet != null ||*/username.equalsIgnoreCase("admin") &&
-                password.equalsIgnoreCase("admin")){
-//            if (resultSet.next()) {
+        resultSet = dbManipulate.retrieveData(query);
+
+        if (resultSet != null /*username.equalsIgnoreCase("admin") &&
+                password.equalsIgnoreCase("admin")*/){
+            if (resultSet.next()) {
                 Parent root = FXMLLoader.load(Objects.requireNonNull(getClass()
                         .getResource("../../resources/views/home.fxml")));
                 Stage stage = (Stage) login_button.getScene().getWindow();
                 stage.setScene(new Scene(root));
                 stage.setTitle("Church Management System - Home");
-//            }
-//            else {
-//                FadeIn fadeIn = new FadeIn();
-//                fadeIn.setNode(login_error_message);
-//                fadeIn.play();
-//            }
+            }
+            else {
+                FadeIn fadeIn = new FadeIn();
+                fadeIn.setNode(login_error_message);
+                fadeIn.play();
+            }
         }
     }
 }

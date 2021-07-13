@@ -116,11 +116,11 @@
                      <font>
                         <Font size="10.0" />
                      </font></TextField>
-                  <TextField fx:id="contact1_field" layoutX="10.0" layoutY="522.0" prefHeight="24.0">
+                  <TextField  fx:id="contact1_field" layoutX="10.0" layoutY="522.0" prefHeight="24.0" onKeyReleased="#contact_field1_onclick">
                      <font>
                         <Font size="10.0" />
                      </font></TextField>
-                  <TextField fx:id="contact2_field" layoutX="10.0" layoutY="566.0" prefHeight="24.0">
+                  <TextField fx:id="contact2_field" onKeyReleased="#contact_field2_onclick" layoutX="10.0" layoutY="566.0" prefHeight="24.0">
                      <font>
                         <Font size="10.0" />
                      </font></TextField>
@@ -227,7 +227,7 @@
                   </VBox>
                   <VBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="10.0" spacing="10.0">
                   <TextField fx:id="cr_name_field" prefHeight="25.0" />
-                  <TextField fx:id="cr_contact_field" layoutX="10.0" layoutY="56.0" prefHeight="25.0" />
+                  <TextField fx:id="cr_contact_field" onKeyReleased="#cr_contact_on_Key_released" layoutX="10.0" layoutY="56.0" prefHeight="25.0" />
                   <TextField fx:id="cr_address_field" layoutX="10.0" layoutY="34.0" prefHeight="25.0" />
                   </VBox>
                </HBox>
