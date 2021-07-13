@@ -26,14 +26,14 @@
       </HBox>
       <HBox alignment="CENTER" layoutX="10.0" layoutY="10.0" spacing="10.0" HBox.hgrow="ALWAYS">
          <Label text="Date:" />
-         <Label fx:id="date"  prefWidth="150.0" />
+         <ChoiceBox prefWidth="150.0" />
       </HBox>
    </HBox>
    <TitledBorder title="Cash Details" stylesheets="@../styles/titled_border.css">
    <AnchorPane VBox.vgrow="ALWAYS">
       <TableView AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <columns>
-            <TableColumn prefWidth="75.0" text="CASH" editable="false" />
+            <TableColumn prefWidth="75.0" text="CASH" />
             <TableColumn prefWidth="75.0" text="QUANTITY" />
             <TableColumn prefWidth="75.0" text="AMOUNT" />
          </columns>
