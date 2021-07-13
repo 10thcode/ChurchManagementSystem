@@ -51,7 +51,8 @@ public class LoginController {
                 "  where Username = '%s' and Password = '%s'",username , password);
 
         resultSet = dbManipulate.retrieveData(query);
-        if (resultSet != null /*||username.equalsIgnoreCase("admin") &&
+
+        if (resultSet != null /*username.equalsIgnoreCase("admin") &&
                 password.equalsIgnoreCase("admin")*/){
             if (resultSet.next()) {
                 Parent root = FXMLLoader.load(Objects.requireNonNull(getClass()
