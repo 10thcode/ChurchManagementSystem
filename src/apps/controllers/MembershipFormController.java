@@ -13,6 +13,8 @@ import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
 import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
 
 public class MembershipFormController {
     public TextField membership_id_field;
@@ -49,7 +51,7 @@ public class MembershipFormController {
     ObservableList<String> marital_status_dropdown_elements = FXCollections.observableArrayList("Single",
             "Married", "Divorced");
     ObservableList<String> children_number_dropdown_elements = FXCollections.observableArrayList("1", "2",
-            "3", "4", "5", "6", "7", "8", "9", "10");
+            "3", "4", "5", "6", "7", "8", "9", "10", "None");
     ObservableList<String> occupation_dropdown_elements = FXCollections.observableArrayList("Teacher",
             "Trader", "Lawyer", "Accountant", "Mechanic");
     ObservableList<String> region_dropdown_elements = FXCollections.observableArrayList("Volta", "Eastern",
@@ -58,13 +60,12 @@ public class MembershipFormController {
     ObservableList<String> nationality_dropdown_elements = FXCollections.observableArrayList("Ghanaian", "Nigerian",
             "Togolese");
     ObservableList<String> education_level_dropdown_elements = FXCollections.observableArrayList("Primary",
-            "Junior High", "Senior High", "Polytechnic", "University");
+            "Junior High", "Senior High", "Tertiary");
     ObservableList<String> relationship_dropdown_elements = FXCollections.observableArrayList("Father", "Mother",
             "Uncle", "Aunt", "Son", "Daughter");
 
-
-
-
+    List<TextField> required_fields = new ArrayList<>();
+    List<ChoiceBox<String>> required_dropdowns = new ArrayList<>();
 
     public  void  initialize(){
         marital_status_choicebox.getItems().addAll(marital_status_dropdown_elements);
@@ -76,6 +77,22 @@ public class MembershipFormController {
         nationality_choicebox.getItems().addAll(nationality_dropdown_elements);
         region_choicebox.getItems().addAll(region_dropdown_elements);
         gender_choicebox.getItems().addAll(gender_dropdown_elements);
+
+        required_fields.add(membership_id_field);
+        required_fields.add(dob_field);
+        required_fields.add(contact1_field);
+        required_fields.add(hometown_field);
+        required_fields.add(residence_field);
+        required_fields.add(first_name_field);
+        required_fields.add(last_name_field);
+        required_fields.add(address_field);
+        required_dropdowns.add(gender_choicebox);
+        required_dropdowns.add(marital_status_choicebox);
+        required_dropdowns.add(children_num_choicebox);
+        required_dropdowns.add(education_level_choicebox);
+        required_dropdowns.add(occupation_choicebox);
+        required_dropdowns.add(region_choicebox);
+        required_dropdowns.add(nationality_choicebox);
     }
     @FXML private void capture_button_onclick() {
     }
@@ -134,8 +151,6 @@ public class MembershipFormController {
 
 
     @FXML private void save_button_onclick() {
-        // TODO: xx/xx/21 Get field values and store in database.
-
         String Membership_id = membership_id_field.getText();
         String firstName = first_name_field.getText();
         String lastName= last_name_field.getText();
@@ -163,19 +178,18 @@ public class MembershipFormController {
         String closestRelationRelationship = cr_relationship_choicebox.getValue();
         String closestRelationOccupation = cr_occupation_choicebox.getValue();
 
-        try {
-            String Query = "INSERT INTO MEMBERSHIP_RECORDS_TABLE VALUES(" + "'" + Membership_id + "'" + ", " + "'" + firstName + "'" + ", " + "'" + lastName + "'" + ", " + "'" + otherNames + "'" + ", " + "'" + genderChoiceValue + "'" + ", " + "'" + DateOfBirth + "'" + ", " + "'" + contactField1 + "'" + ", " + "'" + contactField2 + "'" + ", " + "'" + emailValue + "'" + ", " + "'" + addressField + "'" + ", " + "'" + maritalStatusChoiceValue + "'" + ", "  + numberOfChildren + ", " + "'" + occupation + "'" + ", " + "'" + residence + "'" + ", " + "'" + hometown + "'" + ", " + "'" + region + "'" + ", " + "'" + nationality + "'" + ", " + "'" + educationLevel + "'" + ", " + "'" + closestRelationName + "'" + ", " + "'" + closestRelationContact + "'" + ", " + "'" + closestRelationAddress + "'" + ", " + "'" + closestRelationRelationship + "'" + ", " + "'" + closestRelationOccupation + "'" + ");";
+        if (is_valid()){
+            try {
+                String Query = "INSERT INTO MEMBERSHIP_RECORDS_TABLE VALUES(" + "'" + Membership_id + "'" + ", " + "'" + firstName + "'" + ", " + "'" + lastName + "'" + ", " + "'" + otherNames + "'" + ", " + "'" + genderChoiceValue + "'" + ", " + "'" + DateOfBirth + "'" + ", " + "'" + contactField1 + "'" + ", " + "'" + contactField2 + "'" + ", " + "'" + emailValue + "'" + ", " + "'" + addressField + "'" + ", " + "'" + maritalStatusChoiceValue + "'" + ", "  + numberOfChildren + ", " + "'" + occupation + "'" + ", " + "'" + residence + "'" + ", " + "'" + hometown + "'" + ", " + "'" + region + "'" + ", " + "'" + nationality + "'" + ", " + "'" + educationLevel + "'" + ", " + "'" + closestRelationName + "'" + ", " + "'" + closestRelationContact + "'" + ", " + "'" + closestRelationAddress + "'" + ", " + "'" + closestRelationRelationship + "'" + ", " + "'" + closestRelationOccupation + "'" + ");";
 
-            dbManipulate.InsertIntoDb(Query);
-        }catch (Exception exception){
+                dbManipulate.InsertIntoDb(Query);
+            }catch (Exception exception){
 
+            }
+
+            Stage stage = (Stage) membership_id_field.getScene().getWindow();
+            stage.close();
         }
-
-
-
-        //closing window after details have successfully been saved in the database.
-        Stage stage = (Stage) membership_id_field.getScene().getWindow();
-        stage.close();
     }
 
 ////    public String getSearch() {
@@ -401,5 +415,27 @@ public class MembershipFormController {
             setCrContact(null);
         }
 
+    }
+
+    public boolean is_valid(){
+        boolean valid_state = true;
+        for (TextField field : required_fields){
+            if(!field.getText().isBlank()){
+                field.setStyle("-fx-background-color: white;");
+            }else {
+                field.setStyle("-fx-background-color: #ff8a80;");
+                valid_state = false;
+            }
+        }
+
+        for (ChoiceBox<String> dropdown : required_dropdowns) {
+            if(dropdown.getValue() != null){
+                dropdown.setStyle("-fx-background-color: white;");
+            }else {
+                dropdown.setStyle("-fx-background-color: #ff8a80;");
+                valid_state = false;
+            }
+        }
+        return valid_state;
     }
 }
