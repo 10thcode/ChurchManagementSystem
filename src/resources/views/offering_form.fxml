@@ -24,7 +24,6 @@
       </HBox>
       <HBox alignment="CENTER" layoutX="10.0" layoutY="10.0" spacing="10.0" HBox.hgrow="ALWAYS">
          <Label fx:id="date" />
-         <ChoiceBox prefWidth="150.0" />
       </HBox>
    </HBox>
       <TitledBorder title="Cash Details" stylesheets="@../styles/titled_border.css">

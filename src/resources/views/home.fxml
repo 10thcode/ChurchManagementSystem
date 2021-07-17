@@ -66,7 +66,7 @@
                </ImageView>
                <Label onMouseClicked="#membership_tab_onclick" text="MEMBERSHIP" textFill="WHITE" StackPane.alignment="BOTTOM_CENTER">
                   <font>
-                     <Font name="Cantarell Extra Bold" size="40.0" />
+                     <Font name="System Bold" size="40.0" />
                   </font>
                   <StackPane.margin>
                      <Insets bottom="40.0" right="60.0" />
@@ -87,9 +87,9 @@
                   </StackPane.margin>
                   <Image url="@../images/list_dropdown_icon.png" />
                </ImageView>
-               <Label onMouseClicked="#tithe_tab_onclick" prefHeight="104.0" prefWidth="218.0" text="TITHE AND OFFERING" textAlignment="CENTER" textFill="WHITE" wrapText="true" StackPane.alignment="BOTTOM_CENTER">
+               <Label onMouseClicked="#tithe_tab_onclick" text="TITHE AND OFFERING" textAlignment="CENTER" textFill="WHITE" wrapText="true" StackPane.alignment="BOTTOM_CENTER">
                   <font>
-                     <Font name="Cantarell Extra Bold" size="40.0" />
+                     <Font name="System Bold" size="40.0" />
                   </font>
                   <StackPane.margin>
                      <Insets bottom="10.0" right="60.0" />
@@ -114,7 +114,7 @@
                </ImageView>
                <Label onMouseClicked="#fundraising_tab_onclick" text="FUND-RAISING" textFill="WHITE" StackPane.alignment="BOTTOM_CENTER">
                   <font>
-                     <Font name="Cantarell Extra Bold" size="40.0" />
+                     <Font name="System Bold" size="40.0" />
                   </font>
                   <StackPane.margin>
                      <Insets bottom="40.0" right="60.0" />
@@ -137,7 +137,7 @@
                </ImageView>
                <Label onMouseClicked="#welfare_tab_onclick" text="WELFARE" textFill="WHITE" StackPane.alignment="BOTTOM_CENTER">
                   <font>
-                     <Font name="Cantarell Extra Bold" size="40.0" />
+                     <Font name="System Bold" size="40.0" />
                   </font>
                   <StackPane.margin>
                      <Insets bottom="40.0" right="60.0" />

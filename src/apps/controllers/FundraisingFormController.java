@@ -70,6 +70,7 @@ public class FundraisingFormController {
 
         fundraising_table.setItems(data);
 
+
     }
 
 

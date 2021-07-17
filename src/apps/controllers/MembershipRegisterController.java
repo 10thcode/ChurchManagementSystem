@@ -6,6 +6,7 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
@@ -26,14 +27,18 @@ public class MembershipRegisterController {
     public TableColumn<MembershipTableData, Integer> age;
     public TableColumn<MembershipTableData, String> residence;
     public TextField total;
+    public ChoiceBox search_by_options_choice;
 
     private String TableName= "MEMBERSHIP_RECORDS_TABLE";
     private ResultSet resultSet;
 
+    ObservableList<String> search_by_options_items = FXCollections.observableArrayList("Membership ID", "Full Name", "Phone Number");
     public ObservableList<MembershipTableData> data = FXCollections.observableArrayList();
 
     @FXML
     public void initialize(){
+
+        search_by_options_choice.getItems().addAll(search_by_options_items);
 
          MembershipRegisterController();
 
@@ -85,7 +90,7 @@ public class MembershipRegisterController {
                 }
               //  MemberTable.refresh();
                 int sizeOfData = data.size();
-                total.setText(String.valueOf(sizeOfData) + " RECORDS");
+                total.setText(String.valueOf(sizeOfData));
 
             }
 

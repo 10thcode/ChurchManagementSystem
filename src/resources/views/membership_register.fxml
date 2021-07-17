@@ -41,7 +41,7 @@
             <HBox alignment="CENTER" spacing="10.0" HBox.hgrow="ALWAYS">
                 <children>
                     <Label text="Options:" />
-                    <ChoiceBox prefHeight="24.0" prefWidth="216.0" />
+                    <ChoiceBox prefHeight="24.0" fx:id="search_by_options_choice" prefWidth="216.0" />
                     <TextField prefHeight="24.0" prefWidth="160.0" />
                     <Button alignment="CENTER" contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" prefHeight="25.0" prefWidth="85.0" style="-fx-background-color: black;" text="Button">
                         <graphic>
@@ -56,8 +56,8 @@
             </HBox>
             <HBox alignment="CENTER" spacing="10.0" HBox.hgrow="ALWAYS">
                 <children>
-                    <Label text="Total:" />
-                    <TextField fx:id="total" editable="false" />
+                    <Label text="Total Records:" />
+                    <TextField fx:id="total" editable="false" alignment="CENTER" />
                 </children>
             </HBox>
         </children>

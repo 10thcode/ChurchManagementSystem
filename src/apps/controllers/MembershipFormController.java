@@ -13,6 +13,7 @@ import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
 import java.io.File;
+import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -44,6 +45,7 @@ public class MembershipFormController {
     public TextField cr_name_field;
 
 
+    public ResultSet resultSet;
     DbManipulate dbManipulate = new DbManipulate();
 
 
@@ -59,7 +61,7 @@ public class MembershipFormController {
             "Ahafo", "North East", "Oti", "Western North", "Bono", "Cape Coast", "Savannah");
     ObservableList<String> nationality_dropdown_elements = FXCollections.observableArrayList("Ghanaian", "Nigerian",
             "Togolese");
-    ObservableList<String> education_level_dropdown_elements = FXCollections.observableArrayList("Primary",
+    public ObservableList<String> education_level_dropdown_elements = FXCollections.observableArrayList("Primary",
             "Junior High", "Senior High", "Tertiary");
     ObservableList<String> relationship_dropdown_elements = FXCollections.observableArrayList("Father", "Mother",
             "Uncle", "Aunt", "Son", "Daughter");
@@ -115,6 +117,81 @@ public class MembershipFormController {
 
     @FXML private void search_button_onclick() {
         String search = search_field.getText();
+
+        //RETRIEVE THE DATA FROM THE DATABASE
+
+        try{
+            String Query = "SELECT * FROM MEMBERSHIP_RECORDS_TABLE WHERE MEMBERSHIP_ID=" + "'" +  search + "'";
+            resultSet = dbManipulate.retrieveData(Query);
+
+            if (resultSet != null){
+
+                while(resultSet.next()){
+
+                    String Membership_id = resultSet.getString("MEMBERSHIP_ID");
+                    String firstName = resultSet.getString("FIRST_NAME");
+                    String lastName= resultSet.getString("SURNAME");
+                    String otherNames = resultSet.getString("OTHER_NAMES");
+                    String genderChoiceValue = resultSet.getString("GENDER");
+                    String DateOfBirth = resultSet.getString("DATE_OF_BIRTH");
+                    String contactField1 = resultSet.getString("CONTACT_NUMBER_1");
+                    String contactField2 = resultSet.getString("CONTACT_NUMBER_2");
+                    String emailValue = resultSet.getString("EMAIL");
+                    String addressField = resultSet.getString("DIGITAL_ADDRESS");
+                    String maritalStatusChoiceValue = resultSet.getString("MARITAL_STATUS");
+                    int numberOfChildren = resultSet.getInt("NUMBER_OF_CHILDREN");
+
+                    //Will come back to the image later
+
+                    String occupation = resultSet.getString("OCCUPATION");
+                    String residence = resultSet.getString("PLACE_OF_RESIDENCE");
+                    String hometown = resultSet.getString("HOME_TOWN");
+                    String region = resultSet.getString("REGION");
+                    String nationality = resultSet.getString("NATIONALITY");
+                    String educationLevel = resultSet.getString("LEVEL_OF_EDUCATION");
+                    String closestRelationName = resultSet.getString("CR_NAME");
+                    String closestRelationContact = resultSet.getString("CR_CONTACT");
+                    String closestRelationAddress = resultSet.getString("CR_ADDRESS");
+                    String closestRelationRelationship = resultSet.getString("CR_RELATIONSHIP");
+                    String closestRelationOccupation = resultSet.getString("CR_OCCUPATION");
+
+
+                    //FILL THE FIELDS
+
+                    membership_id_field.setText(Membership_id);
+                    first_name_field.setText(firstName);
+                    last_name_field.setText(lastName);
+                    other_names_field.setText(otherNames);
+                    gender_choicebox.setValue(genderChoiceValue);
+                    dob_field.setText(DateOfBirth);
+                    contact1_field.setText(contactField1);
+                    contact2_field.setText(contactField2);
+                    email.setText(emailValue);
+                    address_field.setText(addressField);
+                    marital_status_choicebox.setValue(maritalStatusChoiceValue);
+                    children_num_choicebox.setValue(String.valueOf(numberOfChildren));
+                    occupation_choicebox.setValue(occupation);
+                    residence_field.setText(residence);
+                    hometown_field.setText(hometown);
+                    region_choicebox.setValue(region);
+                    nationality_choicebox.setValue(nationality);
+                    education_level_choicebox.setValue(educationLevel);
+                    cr_name_field.setText(closestRelationName);
+                    cr_relationship_choicebox.setValue(closestRelationRelationship);
+                    cr_contact_field.setText(closestRelationContact);
+                    cr_occupation_choicebox.setValue(closestRelationOccupation);
+                    cr_address_field.setText(closestRelationAddress);
+
+
+                }
+
+            }
+
+        }catch (Exception e){
+
+        }
+
+
     }
 
     @FXML private void clear_button_onclick() {
@@ -134,7 +211,6 @@ public class MembershipFormController {
         setResidence(null);
         setPassportImage("resources/images/default_passport_icon.png");
         setOccupation(null);
-        setResidence(null);
         setHometown(null);
         setRegion(null);
         setNationality(null);
