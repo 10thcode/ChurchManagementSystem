@@ -42,8 +42,8 @@
                 <children>
                     <Label text="Options:" />
                     <ChoiceBox prefHeight="24.0" fx:id="search_by_options_choice" prefWidth="216.0" />
-                    <TextField prefHeight="24.0" prefWidth="160.0" />
-                    <Button alignment="CENTER" contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" prefHeight="25.0" prefWidth="85.0" style="-fx-background-color: black;" text="Button">
+                    <TextField fx:id="search_text" prefHeight="24.0" prefWidth="160.0" />
+                    <Button alignment="CENTER" onMouseClicked="#search_button" contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" prefHeight="25.0" prefWidth="85.0" style="-fx-background-color: black;" text="Button">
                         <graphic>
                             <ImageView fitHeight="17.0" fitWidth="52.0" pickOnBounds="true" preserveRatio="true">
                                 <image>

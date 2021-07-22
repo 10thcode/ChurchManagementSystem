@@ -14,6 +14,8 @@
 <?import apps.controllers.TitledBorder?>
 
 <?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
 <VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" spacing="20.0" style="-fx-background-color: #7fc1c7;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="apps.controllers.TitheRegisterController">
    <padding>
       <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
@@ -64,7 +66,17 @@
          </padding>
          <HBox alignment="CENTER" spacing="10.0" HBox.hgrow="ALWAYS">
             <Label text="Options:" />
-            <TextField />
+            <ChoiceBox prefHeight="24.0" fx:id="search_by_options_choice" prefWidth="216.0" />
+            <TextField fx:id="search_text" prefHeight="24.0" prefWidth="160.0" />
+            <Button alignment="CENTER" onMouseClicked="#search_button" contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" prefHeight="25.0" prefWidth="85.0" style="-fx-background-color: black;" text="Button">
+               <graphic>
+                  <ImageView fitHeight="17.0" fitWidth="52.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/search_button.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
          </HBox>
          <Button mnemonicParsing="false" style="-fx-background-color: black;" text="Extract" textFill="WHITE">
             <font>

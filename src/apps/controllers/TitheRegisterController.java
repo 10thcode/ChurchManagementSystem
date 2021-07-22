@@ -10,6 +10,7 @@ import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.MouseEvent;
 
 import java.sql.ResultSet;
 
@@ -110,6 +111,9 @@ public class TitheRegisterController {
 
 
 
+    }
+
+    public void search_button(MouseEvent mouseEvent) {
     }
 
     public class Tithe_Register_Table_Model{
