@@ -53,8 +53,8 @@
                   <TextField fx:id="other_names_field" layoutX="10.0" layoutY="566.0" maxHeight="24.0" prefHeight="24.0" />
                   <ChoiceBox fx:id="gender_choicebox" layoutX="10.0" layoutY="484.0" maxHeight="24.0" prefWidth="171.0" style="-fx-background-color: white;" />
                   <TextField fx:id="dob_field" layoutX="10.0" layoutY="478.0" maxHeight="24.0" prefHeight="24.0" />
-                  <TextField fx:id="contact1_field" layoutX="10.0" layoutY="522.0" maxHeight="24.0" onKeyReleased="#contact_field1_onclick" prefHeight="24.0" />
-                  <TextField fx:id="contact2_field" layoutX="10.0" layoutY="566.0" maxHeight="24.0" onKeyReleased="#contact_field2_onclick" prefHeight="24.0" />
+                  <TextField fx:id="contact1_field" layoutX="10.0" layoutY="522.0" maxHeight="24.0" prefHeight="24.0" />
+                  <TextField fx:id="contact2_field" layoutX="10.0" layoutY="566.0" maxHeight="24.0" prefHeight="24.0" />
                   <TextField fx:id="email" layoutX="10.0" layoutY="434.0" maxHeight="24.0" prefHeight="24.0" />
                   <TextField fx:id="address_field" layoutX="10.0" layoutY="478.0" maxHeight="24.0" prefHeight="24.0" />
                      <ChoiceBox fx:id="marital_status_choicebox" layoutX="10.0" layoutY="260.0" maxHeight="24.0" prefWidth="171.0" style="-fx-background-color: white;" />
@@ -113,7 +113,7 @@
                   </VBox>
                   <VBox alignment="CENTER" layoutX="10.0" layoutY="10.0" spacing="10.0">
                   <TextField fx:id="cr_name_field" alignment="BOTTOM_CENTER" prefHeight="24.0" />
-                  <TextField fx:id="cr_contact_field" alignment="BOTTOM_CENTER" layoutX="10.0" layoutY="56.0" onKeyReleased="#cr_contact_on_Key_released" prefHeight="24.0" />
+                  <TextField fx:id="cr_contact_field" alignment="BOTTOM_CENTER" layoutX="10.0" layoutY="56.0" prefHeight="24.0" />
                   <TextField fx:id="cr_address_field" alignment="BOTTOM_CENTER" layoutX="10.0" layoutY="34.0" prefHeight="24.0" />
                   </VBox>
                </HBox>
@@ -141,6 +141,9 @@
                </ImageView>
             </graphic>
          </Button>
+         <TextField fx:id="add_textfield" visible="false" />
+         <Button fx:id="add_button" alignment="CENTER" defaultButton="true" mnemonicParsing="false" onMouseClicked="#add_button_onclick" text="Add" visible="false" />
+         <Button fx:id="add_cancel_button" cancelButton="true" mnemonicParsing="false" onMouseClicked="#add_cancel_button_onclick" text="Cancel" visible="false" />
          <padding>
             <Insets bottom="10.0" />
          </padding>

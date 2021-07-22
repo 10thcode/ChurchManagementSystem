@@ -33,7 +33,7 @@
          <Font size="16.0" />
       </font></PasswordField>
    <HBox alignment="CENTER" spacing="30.0">
-      <Hyperlink fx:id="change_password_link" focusTraversable="false" onMouseClicked="#change_password_link_onclick" text="Change Password" textFill="#61abff">
+      <Hyperlink fx:id="change_password_link" focusTraversable="false" onMouseClicked="#change_password_link_onclick" text="Change Password" textFill="#8cafff">
          <font>
             <Font name="Cantarell Bold" size="13.0" />
          </font>
