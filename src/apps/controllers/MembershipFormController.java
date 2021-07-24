@@ -8,6 +8,7 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -28,7 +29,7 @@ public class MembershipFormController {
     public TextField last_name_field;
     public TextField other_names_field;
     public ChoiceBox<String> gender_choicebox;
-    public TextField dob_field;
+    public DatePicker dob_field;
     public TextField contact1_field;
     public TextField contact2_field;
     public TextField email;
@@ -76,6 +77,7 @@ public class MembershipFormController {
 
     List<TextField> required_fields = new ArrayList<>();
     List<ChoiceBox<String>> required_dropdowns = new ArrayList<>();
+    List<ChoiceBox<String>> add_new_func = new ArrayList<>();
 
     public  void  initialize(){
         marital_status_choicebox.getItems().addAll(marital_status_dropdown_elements);
@@ -126,7 +128,6 @@ public class MembershipFormController {
         add_cancel_button.setManaged(false);
 
         required_fields.add(membership_id_field);
-        required_fields.add(dob_field);
         required_fields.add(contact1_field);
         required_fields.add(hometown_field);
         required_fields.add(residence_field);
@@ -141,62 +142,30 @@ public class MembershipFormController {
         required_dropdowns.add(region_choicebox);
         required_dropdowns.add(nationality_choicebox);
 
-        occupation_choicebox.getSelectionModel().selectedIndexProperty()
-                .addListener((ObservableValue<? extends Number> ov, Number old, Number new_val) ->{
-            if (occupation_choicebox.getSelectionModel().isSelected(occupation_choicebox.getItems().size() -1)){
-                source = occupation_choicebox;
-                FadeIn fadeIn = new FadeIn();
-                fadeIn.setNode(add_textfield);
-                fadeIn.play();
-                FadeIn add_button_fadeIn = new FadeIn();
-                add_button_fadeIn.setNode(add_button);
-                add_button_fadeIn.play();
-                add_textfield.setVisible(true);
-                add_textfield.setManaged(true);
-                add_button.setVisible(true);
-                add_button.setManaged(true);
-                add_cancel_button.setVisible(true);
-                add_cancel_button.setManaged(true);
-            }
-        });
+        add_new_func.add(occupation_choicebox);
+        add_new_func.add(children_num_choicebox);
+        add_new_func.add(nationality_choicebox);
 
-        children_num_choicebox.getSelectionModel().selectedIndexProperty()
-                .addListener((ObservableValue<? extends Number> ov, Number old, Number new_val) ->{
-            if (children_num_choicebox.getSelectionModel().isSelected(children_num_choicebox.getItems().size() -1)){
-                source = children_num_choicebox;
-                FadeIn fadeIn = new FadeIn();
-                fadeIn.setNode(add_textfield);
-                fadeIn.play();
-                FadeIn add_button_fadeIn = new FadeIn();
-                add_button_fadeIn.setNode(add_button);
-                add_button_fadeIn.play();
-                add_textfield.setVisible(true);
-                add_textfield.setManaged(true);
-                add_button.setVisible(true);
-                add_button.setManaged(true);
-                add_cancel_button.setVisible(true);
-                add_cancel_button.setManaged(true);
-            }
-        });
-
-        nationality_choicebox.getSelectionModel().selectedIndexProperty()
-                .addListener((ObservableValue<? extends Number> ov, Number old, Number new_val) ->{
-            if (nationality_choicebox.getSelectionModel().isSelected(nationality_choicebox.getItems().size() -1)){
-                source = nationality_choicebox;
-                FadeIn fadeIn = new FadeIn();
-                fadeIn.setNode(add_textfield);
-                fadeIn.play();
-                FadeIn add_button_fadeIn = new FadeIn();
-                add_button_fadeIn.setNode(add_button);
-                add_button_fadeIn.play();
-                add_textfield.setVisible(true);
-                add_textfield.setManaged(true);
-                add_button.setVisible(true);
-                add_button.setManaged(true);
-                add_cancel_button.setVisible(true);
-                add_cancel_button.setManaged(true);
-            }
-        });
+        for (ChoiceBox<String> cb : add_new_func) {
+            cb.getSelectionModel().selectedIndexProperty()
+                    .addListener((ObservableValue<? extends Number> ov, Number old, Number new_val) ->{
+                        if (cb.getSelectionModel().isSelected(cb.getItems().size() -1)){
+                            source = cb;
+                            FadeIn fadeIn = new FadeIn();
+                            fadeIn.setNode(add_textfield);
+                            fadeIn.play();
+                            FadeIn add_button_fadeIn = new FadeIn();
+                            add_button_fadeIn.setNode(add_button);
+                            add_button_fadeIn.play();
+                            add_textfield.setVisible(true);
+                            add_textfield.setManaged(true);
+                            add_button.setVisible(true);
+                            add_button.setManaged(true);
+                            add_cancel_button.setVisible(true);
+                            add_cancel_button.setManaged(true);
+                        }
+                    });
+        }
     }
 
     @FXML private void capture_button_onclick() {
@@ -303,7 +272,7 @@ public class MembershipFormController {
         setLastName("");
         setOtherNames("");
         setGender(null);
-        setDob("");   //To be modified.
+        dob_field.getEditor().setText("");
         setContact1("");
         setContact2("");
         setEmail("");
@@ -342,7 +311,7 @@ public class MembershipFormController {
         String lastName= last_name_field.getText();
         String otherNames = other_names_field.getText();
         String genderChoiceValue = gender_choicebox.getValue();
-        String DateOfBirth = dob_field.getText();
+        LocalDate DateOfBirth = dob_field.getValue();
         int age = 7;
         String contactField1 = contact1_field.getText();
         String contactField2 = contact2_field.getText();
@@ -425,9 +394,9 @@ public class MembershipFormController {
         this.gender_choicebox.setValue(gender);
     }
 
-    public void setDob(String dob) {
-        this.dob_field.setText(dob);
-    }
+//    public void setDob(String dob) {
+//        this.dob_field.;
+//    }
 
     public void setContact1(String contact1) {
         this.contact1_field.setText(contact1);
@@ -519,6 +488,13 @@ public class MembershipFormController {
                 dropdown.setStyle("-fx-background-color: #ff8a80;");
                 valid_state = false;
             }
+        }
+
+        if (!dob_field.getEditor().getText().isBlank()){
+            dob_field.getEditor().setStyle("-fx-background-color: white;");
+        }else {
+            dob_field.getEditor().setStyle("-fx-background-color: #ff8a80;");
+            valid_state = false;
         }
         return valid_state;
     }
