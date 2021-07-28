@@ -6,10 +6,7 @@ import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.DatePicker;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.FileChooser;
@@ -77,7 +74,7 @@ public class MembershipFormController {
 
     List<TextField> required_fields = new ArrayList<>();
     List<ChoiceBox<String>> required_dropdowns = new ArrayList<>();
-    List<ChoiceBox<String>> add_new_func = new ArrayList<>();
+    List<ChoiceBox<String>> add_new_list = new ArrayList<>();
 
     public  void  initialize(){
         marital_status_choicebox.getItems().addAll(marital_status_dropdown_elements);
@@ -142,11 +139,12 @@ public class MembershipFormController {
         required_dropdowns.add(region_choicebox);
         required_dropdowns.add(nationality_choicebox);
 
-        add_new_func.add(occupation_choicebox);
-        add_new_func.add(children_num_choicebox);
-        add_new_func.add(nationality_choicebox);
+        add_new_list.add(occupation_choicebox);
+        add_new_list.add(children_num_choicebox);
+        add_new_list.add(nationality_choicebox);
+        add_new_list.add(cr_occupation_choicebox);
 
-        for (ChoiceBox<String> cb : add_new_func) {
+        for (ChoiceBox<String> cb : add_new_list) {
             cb.getSelectionModel().selectedIndexProperty()
                     .addListener((ObservableValue<? extends Number> ov, Number old, Number new_val) ->{
                         if (cb.getSelectionModel().isSelected(cb.getItems().size() -1)){
