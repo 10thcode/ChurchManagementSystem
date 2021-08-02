@@ -32,7 +32,6 @@ public class TitheFormController {
     public TextField other_name;
     public TextField number;
     public TextField email;
-    public TextField Receipt_date;
     public TextField amount;
     public TextField details;
     public TableView<TitheModel> tithe_table;
@@ -40,6 +39,7 @@ public class TitheFormController {
     public TableColumn<TitheModel, String> PAYMENT_DETAILS;
     public TableColumn<TitheModel, Integer> AMOUNT_PAID;
     public TableColumn<TitheModel, String> OFFICER;
+    public DatePicker Receipt_date;
 
     ResultSet resultSet;
     DbManipulate dbManipulate = new DbManipulate();

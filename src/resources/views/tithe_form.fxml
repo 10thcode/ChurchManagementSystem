@@ -3,6 +3,7 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
@@ -103,7 +104,7 @@
                   <HBox alignment="CENTER" spacing="10.0" HBox.hgrow="ALWAYS">
                      <children>
                         <Label text="Receipt Date:" />
-                        <TextField fx:id="Receipt_date" prefWidth="100.0" />
+                        <DatePicker fx:id="Receipt_date" prefHeight="24.0" prefWidth="136.0" />
                      </children>
                   </HBox>
                   <HBox alignment="CENTER" layoutX="10.0" layoutY="10.0" spacing="10.0" HBox.hgrow="ALWAYS">
